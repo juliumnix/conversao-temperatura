@@ -21,3 +21,13 @@ jobs:
         cd ./src   # Navega para o diretório onde está o package-lock.json
         npm install
         npm run test
+
+    - name: Construção da imagem do container da aplicação
+      uses: docker/build-push-action@v4.0.0
+      with: 
+        context: ./src
+        file: ./src/Dockerfile
+        push: true
+        tags: |
+          juliumnix/conversao-live:latest
+          juliumnix/conversao-live:v${{ github.run_number }}
