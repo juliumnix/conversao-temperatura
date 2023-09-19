@@ -16,6 +16,12 @@ jobs:
       with:
         node-version: 18.17.0
 
+    - name: Docker Login
+      uses: docker/login-action@v3.0.0
+      with:
+        username: ${{ secrets.REGISTRY_USERNAME }}
+        password: ${{ secrets.REGISTRY_PASSWORD }}
+
     - name: Execução do npm install e o teste
       run: |
         cd ./src   # Navega para o diretório onde está o package-lock.json
