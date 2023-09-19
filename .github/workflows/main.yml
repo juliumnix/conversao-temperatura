@@ -15,10 +15,9 @@ jobs:
       uses: actions/setup-node@v2.5.2
       with:
         node-version: 18.17.0
-        cache: 'npm'
 
     - name: Execução do npm install e o teste
       run: |
+        cd ./src   # Navega para o diretório onde está o package-lock.json
         npm install
         npm run test
-      working-directory: ./src
