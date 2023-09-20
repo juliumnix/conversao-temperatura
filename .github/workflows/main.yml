@@ -44,12 +44,3 @@ jobs:
         with:
           service-id: ${{ secrets.SERVICE_ID }}
           api-key: ${{ secrets.RENDER_API_KEY }}
-
-
-
-      - name: Render Deployment
-        uses: sws2apps/render-deployment@v1.5.0
-        with:
-          # The Service ID of your Render service
-          serviceId: ${{ secrets.SERVICE_ID }}
-          apiKey: ${{ secrets.RENDER_API_KEY }}
