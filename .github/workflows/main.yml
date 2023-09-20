@@ -34,16 +34,4 @@ jobs:
         push: true
         tags: |
           juliumnix/conversao-live:latest
-          juliumnix/conversao-live:v${{ github.run_number }}
-
-  deploy:
-    name: Deploy
-    needs: [CI]
-    runs-on: ubuntu-latest
-
-    steps: 
-      - name: Deploy to production
-        uses: johnbeynon/render-deploy-action@v0.0.8
-        with:
-          service-id: ${{ secrets.SERVICE_ID }} # Can be found as part of the Deploy Hook
-          api-key: ${{ secrets.RENDER_API_KEY }} # Create your API key in Render Dashboard > Account Settings        
+          juliumnix/conversao-live:v${{ github.run_number }}     
