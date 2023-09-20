@@ -52,3 +52,4 @@ jobs:
         with:
           # The Service ID of your Render service
           serviceId: ${{ secrets.SERVICE_ID }}
+          apiKey: ${{ secrets.RENDER_API_KEY }}
